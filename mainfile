@@ -82,10 +82,47 @@
     .bio { display:flex; gap:1rem; align-items:flex-start; }
     .bio .avatar { width: 72px; height:72px; border-radius:16px; background: linear-gradient(135deg, rgba(47,183,178,.18), rgba(124,91,167,.18)); display:grid; place-items:center; font-weight:700; color:#fff; }
 
-    footer { padding: 2.5rem 0; background:#fff; border-top:1px solid rgba(31,42,55,.08); margin-top: 2rem; }
-    .footer-grid { display:grid; grid-template-columns: 1.2fr .8fr; gap:1.25rem; }
-    @media (max-width: 900px){ .footer-grid { grid-template-columns: 1fr; } }
-    .small { font-size:.9rem; color: var(--ink-soft); }
+    /* Footer update */
+    footer {
+      padding: 2.5rem 0;
+      background: var(--bg);
+      margin-top: 2rem;
+    }
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+    }
+    .footer-brand img {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+    }
+    .footer-brand .title {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+    .footer-brand .title .name {
+      font-weight: 700;
+    }
+    .footer-brand .title .tag {
+      font-size: .82rem;
+      color: var(--ink-soft);
+    }
+    @media (max-width: 600px) {
+      .footer-grid {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
 
     .mt-0{margin-top:0} .mb-0{margin-bottom:0} .mb-2{margin-bottom:.5rem} .mb-3{margin-bottom:.75rem} .mb-4{margin-bottom:1rem}
     .center { text-align:center; }
@@ -297,31 +334,25 @@
   </section>
 
   <footer>
-    <div class="container footer-grid">
-      <div>
-        <div class="brand" style="margin-bottom:.5rem">
-          <img src="logo.png" alt="Family Yoga Institute logo small" />
-          <div class="title">
-            <span class="name">Family Yoga Institute</span>
-            <span class="tag">Growing together</span>
-          </div>
-        </div>
-        <p class="small mb-0">© <span id="year"></span> Family Yoga Institute. All rights reserved.</p>
-      </div>
-      <div class="small">
-        <strong>Quick links</strong><br/>
-        <a href="#classes">Classes</a> • <a href="#schedule">Schedule</a> • <a href="#location">Location</a> • <a href="#about">About</a> • <a href="#signup">Sign Up</a>
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <img src="logo.png" alt="Family Yoga Institute logo small" />
+      <div class="title">
+        <span class="name">Family Yoga Institute</span>
+        <span class="tag">Growing together</span>
       </div>
     </div>
-  </footer>
-
-  <script>
-    function toggleMenu(){
-      const el = document.getElementById('mobileMenu');
-      el.style.display = el.style.display === 'block' ? 'none' : 'block';
-    }
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+    <div class="small">
+      <strong>Quick links</strong><br/>
+      <a href="#classes">Classes</a> • 
+      <a href="#schedule">Schedule</a> • 
+      <a href="#location">Location</a> • 
+      <a href="#about">About</a> • 
+      <a href="#signup">Sign Up</a>
+    </div>
+  </div>
+  <div class="container center small" style="margin-top:1rem;">
+    © <span id="year"></span> Family Yoga Institute. All rights reserved.
+  </div>
+</footer>
 
