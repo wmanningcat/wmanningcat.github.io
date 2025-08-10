@@ -19,24 +19,6 @@
   </style>
 </head>
 <body class="min-h-screen bg-gradient-to-b from-teal-50 via-white to-purple-50 text-slate-800">
-  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-teal-100">
-    <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <img src="logo.png" alt="Family Yoga Institute Logo" class="h-12 w-auto rounded-full">
-        <div class="leading-tight">
-          <div class="font-semibold tracking-wide text-slate-900">Family Yoga Institute</div>
-          <div class="text-xs text-slate-500 -mt-0.5">growing together</div>
-        </div>
-      </div>
-      <nav class="hidden md:flex items-center gap-6 text-sm">
-        <a href="#classes" class="hover:text-[color:var(--fyi-teal)]">Classes</a>
-        <a href="#schedule" class="hover:text-[color:var(--fyi-teal)]">Schedule</a>
-        <a href="#about" class="hover:text-[color:var(--fyi-teal)]">About</a>
-        <a href="#faq" class="hover:text-[color:var(--fyi-teal)]">FAQ</a>
-        <a href="#signup" class="px-4 py-2 rounded-xl border" style="border-color:var(--fyi-teal); color:var(--fyi-teal);">Sign up</a>
-      </nav>
-    </div>
-  </header>
 
   <!-- HERO -->
   <section class="relative overflow-hidden">
