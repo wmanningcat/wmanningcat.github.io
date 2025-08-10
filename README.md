@@ -31,8 +31,11 @@
           <a href="#signup" class="btn btn-outline">Join the list</a>
         </div>
       </div>
-      <div class="relative flex items-center justify-center">
-        <img src="logo.png" alt="Family Yoga Institute Logo" class="rounded-3xl shadow-lg max-h-72 max-w-full bg-white">
+      <div class="relative">
+        <div class="aspect-[4/3] rounded-3xl bg-gradient-to-br from-teal-100 to-purple-100 border border-teal-200 shadow-inner flex items-center justify-center p-6">
+          <img src="logo.png" alt="Family Yoga Institute Logo" class="max-h-full max-w-full rounded-2xl">
+        </div>
+        <p class="mt-3 text-center text-sm text-slate-500 italic">Growing together</p>
       </div>
     </div>
   </section>
