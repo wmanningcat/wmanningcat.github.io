@@ -1,124 +1,338 @@
+
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Family Yoga Institute – Growing Together</title>
-  <meta name="description" content="Family Yoga Institute (FYI): Community-centered yoga for moms, moms-to-be, and little ones." />
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Family Yoga Institute (FYI) — Growing Together</title>
+  <meta name="description" content="Family Yoga Institute (FYI): Mindful yoga classes for prenatal and postnatal moms in our neighborhood. Mommy & Me and Mommies To Be." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --fyi-green:#3BAA7A;
-      --fyi-teal:#00A3A3;
-      --fyi-purple:#7C4DFF;
+    :root {
+      --brand-green: #7BBF6A;   /* soft green */
+      --brand-teal:  #2FB7B2;   /* fresh teal */
+      --brand-purple:#7C5BA7;   /* calm purple */
+      --ink: #1f2a37;           /* dark text */
+      --ink-soft:#4b5563;       /* secondary text */
+      --bg: #F7FAF9;            /* page background */
+      --card: #ffffff;          /* card background */
+      --ring: rgba(47,183,178,.25);
+      --shadow: 0 10px 25px rgba(31,42,55,.08);
     }
-    .btn{ @apply px-5 py-3 rounded-2xl font-medium transition; }
-    .btn-primary{ background:var(--fyi-green); color:white; }
-    .btn-outline{ @apply border; border-color:var(--fyi-teal); color:var(--fyi-teal); }
-    .btn-outline:hover{ background:var(--fyi-teal); color:white; }
+    * { box-sizing: border-box; }
+    html, body { margin:0; padding:0; font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, sans-serif; color: var(--ink); background: var(--bg); }
+    img { max-width:100%; display:block; }
+    a { color: var(--brand-teal); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Layout */
+    .container { width: min(1100px, 92%); margin: 0 auto; }
+    header.site-header { position: sticky; top: 0; z-index: 50; background: linear-gradient(180deg, #fff, rgba(255,255,255,.92)); backdrop-filter: saturate(180%) blur(8px); box-shadow: 0 1px 0 rgba(31,42,55,.06); }
+    .nav { display:flex; align-items:center; justify-content:space-between; gap: 1rem; padding: .75rem 0; }
+    .brand { display:flex; align-items:center; gap:.75rem; }
+    .brand img { width:48px; height:48px; object-fit: contain; }
+    .brand .title { display:flex; flex-direction:column; line-height:1.1; }
+    .brand .title .name { font-weight: 700; letter-spacing:.2px; }
+    .brand .title .tag { font-size:.82rem; color: var(--ink-soft); }
+
+    .nav-links { display:flex; align-items:center; gap: 1rem; }
+    .nav-links a { font-weight: 600; font-size:.95rem; padding:.5rem .75rem; border-radius: 999px; }
+    .nav-links a.cta { background: linear-gradient(135deg, var(--brand-teal), var(--brand-purple)); color: #fff; box-shadow: var(--shadow); }
+    .nav-links a.cta:hover { filter: saturate(1.1) brightness(1.02); text-decoration:none; }
+
+    .mobile-toggle { display:none; border:0; background:transparent; font-size:1.5rem; }
+    @media (max-width: 820px) {
+      .nav-links { display:none; }
+      .mobile-toggle { display:block; }
+      .mobile-menu { display:none; position:absolute; left:0; right:0; top:64px; background:#fff; border-top:1px solid rgba(31,42,55,.06); box-shadow: 0 8px 24px rgba(31,42,55,.06); }
+      .mobile-menu a { display:block; padding:1rem 1.25rem; border-bottom:1px solid rgba(31,42,55,.06); }
+      .mobile-menu a.cta { margin: .5rem 1rem 1rem; text-align:center; border-radius:12px; }
+    }
+
+    /* Hero */
+    .hero { position: relative; padding: 5rem 0 3rem; background: radial-gradient(1200px 600px at 10% -100px, rgba(124,91,167,.15), transparent 60%), radial-gradient(900px 500px at 110% -100px, rgba(47,183,178,.12), transparent 60%); }
+    .hero-inner { display:grid; grid-template-columns: 1.1fr .9fr; align-items:center; gap: 2rem; }
+    @media (max-width: 900px){ .hero-inner{ grid-template-columns: 1fr; } }
+    .hero h1 { font-size: clamp(2rem, 2.8vw + 1rem, 3.2rem); margin: 0 0 .5rem; }
+    .hero p.lead { font-size: clamp(1rem, .6vw + .9rem, 1.15rem); color: var(--ink-soft); margin: 0 0 1.25rem; }
+    .hero .cta-row { display:flex; gap:.75rem; flex-wrap:wrap; }
+    .btn { display:inline-block; font-weight:700; padding:.9rem 1.1rem; border-radius: 14px; box-shadow: var(--shadow); border: 1px solid transparent; }
+    .btn.primary { background: linear-gradient(135deg, var(--brand-teal), var(--brand-purple)); color:#fff; }
+    .btn.secondary { background:#fff; border-color: rgba(31,42,55,.08); }
+
+    .logo-badge { width: 180px; aspect-ratio: 1/1; margin: 0 auto; display:grid; place-items:center; background: conic-gradient(from 90deg at 50% 50%, rgba(124,91,167,.08), rgba(47,183,178,.08), rgba(123,191,106,.08)); border-radius: 50%; box-shadow: inset 0 0 0 10px rgba(255,255,255,.7), var(--shadow); }
+    .logo-badge img { width: 120px; height: 120px; object-fit: contain; background: transparent; }
+    .tagline { display:inline-flex; align-items:center; gap:.5rem; padding:.35rem .6rem; border-radius:999px; background: #fff; border:1px solid rgba(31,42,55,.06); box-shadow: var(--shadow); font-size:.88rem; }
+
+    /* Sections */
+    section { padding: 3.25rem 0; }
+    h2.section-title { font-size: 1.8rem; margin: 0 0 1.2rem; }
+    .grid { display:grid; gap: 1.25rem; }
+    .cols-2 { grid-template-columns: repeat(2, 1fr); }
+    .cols-3 { grid-template-columns: repeat(3, 1fr); }
+    @media (max-width: 900px){ .cols-2, .cols-3 { grid-template-columns: 1fr; } }
+
+    .card { background: var(--card); border: 1px solid rgba(31,42,55,.06); border-radius: 16px; box-shadow: var(--shadow); padding: 1.25rem; }
+    .pill { display:inline-block; padding:.25rem .6rem; border-radius:999px; font-size:.8rem; font-weight:700; color:#fff; }
+    .pill.teal { background: var(--brand-teal); }
+    .pill.purple { background: var(--brand-purple); }
+    .pill.green { background: var(--brand-green); }
+
+    .schedule-table { width:100%; border-collapse: collapse; font-size:.98rem; }
+    .schedule-table th, .schedule-table td { padding:.75rem .6rem; border-bottom:1px solid rgba(31,42,55,.08); text-align:left; }
+    .schedule-table th { color: var(--ink-soft); font-weight:600; }
+
+    .bio { display:flex; gap:1rem; align-items:flex-start; }
+    .bio .avatar { width: 72px; height:72px; border-radius:16px; background: linear-gradient(135deg, rgba(47,183,178,.18), rgba(124,91,167,.18)); display:grid; place-items:center; font-weight:700; color:#fff; }
+
+    footer { padding: 2.5rem 0; background:#fff; border-top:1px solid rgba(31,42,55,.08); margin-top: 2rem; }
+    .footer-grid { display:grid; grid-template-columns: 1.2fr .8fr; gap:1.25rem; }
+    @media (max-width: 900px){ .footer-grid { grid-template-columns: 1fr; } }
+    .small { font-size:.9rem; color: var(--ink-soft); }
+
+    /* Utility */
+    .mt-0{margin-top:0} .mb-0{margin-bottom:0} .mb-2{margin-bottom:.5rem} .mb-3{margin-bottom:.75rem} .mb-4{margin-bottom:1rem}
+    .center { text-align:center; }
   </style>
 </head>
-<body class="min-h-screen bg-gradient-to-b from-teal-50 via-white to-purple-50 text-slate-800">
-
-  <!-- HEADER -->
-  <header class="sticky top-0 z-50 bg-white/85 backdrop-blur border-b border-teal-100">
-    <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <img src="logo.png" alt="Family Yoga Institute Logo" class="h-12 w-auto rounded-2xl shadow-sm ring-1 ring-teal-200/50">
-        <div class="leading-tight">
-          <div class="font-semibold tracking-wide text-slate-900">Family Yoga Institute</div>
-          <div class="text-xs text-slate-500 -mt-0.5">growing together</div>
+<body>
+  <!-- Header / Navigation -->
+  <header class="site-header">
+    <div class="container nav">
+      <div class="brand">
+        <img src="logo.png" alt="Family Yoga Institute logo" />
+        <div class="title">
+          <span class="name">Family Yoga Institute</span>
+          <span class="tag">Growing together</span>
         </div>
       </div>
-      <nav class="hidden md:flex items-center gap-6 text-sm">
-        <a href="#classes" class="hover:text-[color:var(--fyi-teal)]">Classes</a>
-        <a href="#schedule" class="hover:text-[color:var(--fyi-teal)]">Schedule</a>
-        <a href="#about" class="hover:text-[color:var(--fyi-teal)]">About</a>
-        <a href="#faq" class="hover:text-[color:var(--fyi-teal)]">FAQ</a>
-        <a href="#signup" class="px-4 py-2 rounded-xl border" style="border-color:var(--fyi-teal); color:var(--fyi-teal);">Sign up</a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#classes">Classes</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#location">Location</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a class="cta" href="#signup">Sign Up</a>
       </nav>
+      <button class="mobile-toggle" aria-label="Open menu" onclick="toggleMenu()">☰</button>
+    </div>
+    <div id="mobileMenu" class="mobile-menu">
+      <a href="#classes" onclick="toggleMenu()">Classes</a>
+      <a href="#schedule" onclick="toggleMenu()">Schedule</a>
+      <a href="#location" onclick="toggleMenu()">Location</a>
+      <a href="#about" onclick="toggleMenu()">About</a>
+      <a href="#contact" onclick="toggleMenu()">Contact</a>
+      <a class="cta" href="#signup" onclick="toggleMenu()">Sign Up</a>
     </div>
   </header>
 
-  <!-- HERO -->
-  <section class="relative overflow-hidden">
-    <div class="mx-auto max-w-6xl px-6 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-inner">
       <div>
-        <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-slate-900">Family Yoga Institute</h1>
-        <p class="mt-4 text-lg text-slate-600">Community-centered yoga for moms, moms-to-be, and little ones — with a focus on mindfulness, connection, and accessible movement.</p>
-        <p class="mt-3 text-sm text-slate-500">Pending final approval at the September association meeting, our neighborhood will promote classes and provide space. We’re excited to begin soon!</p>
-        <div class="mt-6 flex flex-wrap gap-3">
-          <a href="#classes" class="btn btn-primary">Explore classes</a>
-          <a href="#signup" class="btn btn-outline">Join the list</a>
+        <span class="tagline">Neighborhood classes • Prenatal & Postnatal</span>
+        <h1>Mindful movement for moms & little ones</h1>
+        <p class="lead">The <strong>Family Yoga Institute (FYI)</strong> offers supportive, small‑group yoga in our neighborhood—starting with <em>Mindful Mommies To Be</em> (prenatal) and <em>Mindful Mommy & Me</em> (postnatal). If approved by the association in <strong>September</strong>, classes will be promoted and hosted on site. Let’s grow together. 💚</p>
+        <div class="cta-row">
+          <a class="btn primary" href="#signup">Save your spot</a>
+          <a class="btn secondary" href="#classes">See class details</a>
         </div>
       </div>
-      <div class="relative">
-        <img src="logo.png" alt="Family Yoga Institute Logo" class="max-h-full max-w-full rounded-2xl">
-        <p class="mt-3 text-center text-sm text-slate-500 italic">Growing together</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CLASSES -->
-  <section id="classes" class="py-16 bg-white">
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-3xl font-bold text-slate-900 mb-8">Our Classes</h2>
-      <div class="grid md:grid-cols-2 gap-10">
-        <div>
-          <h3 class="text-xl font-semibold text-fyi-green">Mindful Mommy and Me</h3>
-          <p class="mt-2 text-slate-600">A bonding yoga experience for mothers and their little ones. Gentle postures, breathing exercises, and mindfulness techniques to foster connection and relaxation.</p>
-        </div>
-        <div>
-          <h3 class="text-xl font-semibold text-fyi-purple">Mindful Mommies To Be</h3>
-          <p class="mt-2 text-slate-600">A prenatal yoga class designed to support expectant mothers physically and emotionally. Gentle movement, breathwork, and meditation to prepare for birth and motherhood.</p>
+      <div>
+        <div class="logo-badge" aria-hidden="true">
+          <img src="logo.png" alt="FYI logo" />
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SCHEDULE -->
-  <section id="schedule" class="py-16 bg-gradient-to-r from-teal-50 to-purple-50">
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-3xl font-bold text-slate-900 mb-8">Schedule</h2>
-      <p class="text-slate-600">Class schedule coming soon. Please check back after the September association meeting!</p>
+  <!-- Classes -->
+  <section id="classes">
+    <div class="container">
+      <h2 class="section-title">Classes</h2>
+      <div class="grid cols-2">
+        <article class="card">
+          <span class="pill teal">Prenatal</span>
+          <h3 class="mb-2">Mindful Mommies To Be</h3>
+          <p class="mb-3">Gentle, breath‑led sequences designed for each trimester. We’ll focus on comfort, mobility, pelvic floor awareness, and nervous‑system calm—plus practical mindfulness tools for pregnancy, birth, and beyond.</p>
+          <ul class="mb-3">
+            <li>Open to all trimesters (no experience required)</li>
+            <li>Props provided; bring water and a yoga mat</li>
+            <li>60 minutes • Small group</li>
+          </ul>
+          <a class="btn secondary" href="#signup">Join the waitlist</a>
+        </article>
+
+        <article class="card">
+          <span class="pill purple">Postnatal</span>
+          <h3 class="mb-2">Mindful Mommy & Me</h3>
+          <p class="mb-3">A welcoming class for moms and babies (newborn to early crawlers). Rebuild strength and stability, release tension, and enjoy playful bonding practices. Feeding, changing, and fussy babies are always welcome.</p>
+          <ul class="mb-3">
+            <li>Safe, progressive postnatal core & pelvic floor work</li>
+            <li>Baby‑friendly pacing and transitions</li>
+            <li>60 minutes • Small group</li>
+          </ul>
+          <a class="btn secondary" href="#signup">Reserve a spot</a>
+        </article>
+      </div>
+
+      <div class="card" style="margin-top:1rem;">
+        <strong>What’s next at FYI?</strong>
+        <p class="mb-0 small">We’re exploring adding <em>Mike</em> to the teaching team and planning on‑site <strong>childcare</strong> so moms can practice without arranging a sitter. Stay tuned!</p>
+      </div>
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section id="about" class="py-16 bg-white">
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-3xl font-bold text-slate-900 mb-8">About Us</h2>
-      <p class="text-slate-600">The Family Yoga Institute is dedicated to creating a welcoming space for mothers and families to connect, move, and grow together through yoga and mindfulness practices.</p>
+  <!-- Schedule -->
+  <section id="schedule">
+    <div class="container">
+      <h2 class="section-title">Class Schedule</h2>
+      <div class="card">
+        <table class="schedule-table" aria-describedby="schedule-note">
+          <thead>
+            <tr>
+              <th>Day</th>
+              <th>Time</th>
+              <th>Class</th>
+              <th>Location</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Tuesday</td>
+              <td>10:00–11:00 AM</td>
+              <td>Mindful Mommy & Me</td>
+              <td>Community Association Studio</td>
+            </tr>
+            <tr>
+              <td>Thursday</td>
+              <td>6:00–7:00 PM</td>
+              <td>Mindful Mommies To Be</td>
+              <td>Community Association Studio</td>
+            </tr>
+          </tbody>
+        </table>
+        <p id="schedule-note" class="small mb-0" style="margin-top:.5rem">Scheduling and promotion will be confirmed following the association’s September meeting.</p>
+      </div>
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section id="faq" class="py-16 bg-gradient-to-r from-teal-50 to-purple-50">
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-3xl font-bold text-slate-900 mb-8">Frequently Asked Questions</h2>
-      <ul class="space-y-6 text-slate-600">
-        <li><strong>What should I bring?</strong> Comfortable clothing, a yoga mat, and water.</li>
-        <li><strong>Do I need prior yoga experience?</strong> Not at all! Our classes are beginner-friendly.</li>
-        <li><strong>Can partners join?</strong> Yes, partners are welcome in certain classes.</li>
-      </ul>
+  <!-- Location -->
+  <section id="location">
+    <div class="container">
+      <h2 class="section-title">Location</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3 class="mt-0">Community Association Studio</h3>
+          <p class="mb-3">Convenient neighborhood location with free on‑site parking and stroller‑friendly access. Exact room details will be provided upon registration.</p>
+          <ul class="mb-3">
+            <li>Clean mats and props available</li>
+            <li>Nursing/changing friendly space</li>
+            <li>Restrooms nearby</li>
+          </ul>
+          <a class="btn secondary" href="#signup">Register for updates</a>
+        </div>
+        <div class="card">
+          <h3 class="mt-0">What to bring</h3>
+          <ul>
+            <li>Yoga mat (we have a few extras)</li>
+            <li>Water bottle and small towel</li>
+            <li>For Mommy & Me: a blanket for baby</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- SIGNUP -->
-  <section id="signup" class="py-16 bg-white">
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-3xl font-bold text-slate-900 mb-8">Sign Up</h2>
-      <p class="mb-4 text-slate-600">Use the link below to register for classes via our Google Form:</p>
-      <a href="#" class="btn btn-primary">Go to Google Form</a>
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About</h2>
+      <div class="grid cols-2">
+        <div class="card bio">
+          <div class="avatar" aria-hidden="true">AM</div>
+          <div>
+            <h3 class="mt-0">About Auntie Mary</h3>
+            <p>Hi! I’m Mary, founder of the Family Yoga Institute. I’m passionate about creating supportive spaces where moms feel strong, seen, and resourced. My classes emphasize functional movement, breathwork, and practical mindfulness you can take into daily life. Whether you’re preparing for birth or easing back into movement with your little one, I’m here to meet you exactly where you are.</p>
+          </div>
+        </div>
+        <div class="card bio">
+          <div class="avatar" aria-hidden="true">FYI</div>
+          <div>
+            <h3 class="mt-0">About FYI</h3>
+            <p>The <strong>Family Yoga Institute</strong> supports families through evidence‑informed, community‑centered yoga. We start with prenatal and postnatal offerings and plan to grow—adding teachers like Mike and building a childcare option so moms can practice with peace of mind.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <footer class="py-10 bg-slate-900 text-slate-200">
-    <div class="max-w-6xl mx-auto px-6">
-      <p>&copy; 2025 Family Yoga Institute. All rights reserved.</p>
-      <p class="mt-2">Contact: <a href="mailto:info@familyyogainstitute.com" class="underline">info@familyyogainstitute.com</a></p>
+  <!-- Sign Up -->
+  <section id="signup">
+    <div class="container">
+      <h2 class="section-title">Sign Up</h2>
+      <div class="card">
+        <p class="mb-3">Ready to join us? Use the form below to reserve a spot or join the waitlist. You’ll receive a confirmation email with details.</p>
+        <p class="small mb-3"><strong>Note:</strong> You can replace the link below with a Google Form. Create your form at <em>forms.google.com</em> and paste its share link here.</p>
+        <p class="mb-3"><a class="btn primary" href="https://forms.gle/YOUR-FORM-ID" target="_blank" rel="noopener">Open Sign‑Up Form</a></p>
+        <!-- Optional: embed Google Form by replacing the src below with your published Form URL
+        <iframe src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true" width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3 class="mt-0">Get in touch</h3>
+          <p class="mb-3">Questions about which class is right for you? Accessibility needs? Send a note—we’re happy to help.</p>
+          <ul class="mb-3">
+            <li>Email: <a href="mailto:hello@familyyogainstitute.org">hello@familyyogainstitute.org</a></li>
+            <li>Phone: <a href="tel:+1-555-555-5555">(555) 555‑5555</a></li>
+          </ul>
+          <p class="small mb-0">Follow along for updates and schedule announcements after the September association meeting.</p>
+        </div>
+        <div class="card">
+          <h3 class="mt-0">Community & access</h3>
+          <p class="mb-0">We’re committed to a welcoming, inclusive space. Sliding‑scale options are available; please ask. Babies cry, moms feed, and everyone is welcome.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom:.5rem">
+          <img src="logo.png" alt="Family Yoga Institute logo small" />
+          <div class="title">
+            <span class="name">Family Yoga Institute</span>
+            <span class="tag">Growing together</span>
+          </div>
+        </div>
+        <p class="small mb-0">© <span id="year"></span> Family Yoga Institute. All rights reserved.</p>
+      </div>
+      <div class="small">
+        <strong>Quick links</strong><br/>
+        <a href="#classes">Classes</a> • <a href="#schedule">Schedule</a> • <a href="#location">Location</a> • <a href="#about">About</a> • <a href="#signup">Sign Up</a>
+      </div>
     </div>
   </footer>
 
+  <script>
+    // Mobile menu toggle
+    function toggleMenu(){
+      const el = document.getElementById('mobileMenu');
+      el.style.display = el.style.display === 'block' ? 'none' : 'block';
+    }
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
+
