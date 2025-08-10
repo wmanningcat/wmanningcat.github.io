@@ -25,6 +25,7 @@
     a { color: var(--brand-teal); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
+    /* Layout */
     .container { width: min(1100px, 92%); margin: 0 auto; }
     header.site-header { position: sticky; top: 0; z-index: 50; background: linear-gradient(180deg, #fff, rgba(255,255,255,.92)); backdrop-filter: saturate(180%) blur(8px); box-shadow: 0 1px 0 rgba(31,42,55,.06); }
     .nav { display:flex; align-items:center; justify-content:space-between; gap: 1rem; padding: .75rem 0; }
@@ -39,18 +40,34 @@
     .nav-links a.cta { background: linear-gradient(135deg, var(--brand-teal), var(--brand-purple)); color: #fff; box-shadow: var(--shadow); }
     .nav-links a.cta:hover { filter: saturate(1.1) brightness(1.02); text-decoration:none; }
 
+    /* Ensure mobile menu is hidden by default on ALL screens */
+    .mobile-menu { display:none; }
+
     .mobile-toggle { display:none; border:0; background:transparent; font-size:1.5rem; }
+
     @media (max-width: 820px) {
       .nav-links { display:none; }
       .mobile-toggle { display:block; }
-      .mobile-menu { display:none; position:absolute; left:0; right:0; top:64px; background:#fff; border-top:1px solid rgba(31,42,55,.06); box-shadow: 0 8px 24px rgba(31,42,55,.06); }
+      .mobile-menu {
+        position:absolute; left:0; right:0; top:64px;
+        background:#fff; border-top:1px solid rgba(31,42,55,.06);
+        box-shadow: 0 8px 24px rgba(31,42,55,.06);
+      }
       .mobile-menu a { display:block; padding:1rem 1.25rem; border-bottom:1px solid rgba(31,42,55,.06); }
       .mobile-menu a.cta { margin: .5rem 1rem 1rem; text-align:center; border-radius:12px; }
     }
 
-    .hero { position: relative; padding: 5rem 0 3rem; background: radial-gradient(1200px 600px at 10% -100px, rgba(124,91,167,.15), transparent 60%), radial-gradient(900px 500px at 110% -100px, rgba(47,183,178,.12), transparent 60%); }
-    .hero-inner { display:grid; grid-template-columns: 1.1fr .9fr; align-items:center; gap: 2rem; }
-    @media (max-width: 900px){ .hero-inner{ grid-template-columns: 1fr; } }
+    /* Hero */
+    .hero { position: relative; padding: 5rem 0 3rem; background:
+      radial-gradient(1200px 600px at 10% -100px, rgba(124,91,167,.15), transparent 60%),
+      radial-gradient(900px 500px at 110% -100px, rgba(47,183,178,.12), transparent 60%);
+    }
+    .hero-inner { display:grid; gap: 2rem; }
+    @media (min-width: 901px){
+      .hero-inner { grid-template-columns: 1.1fr .9fr; }
+      .hero-inner > :first-child { order: 0; }   /* text left */
+      .hero-inner > :last-child  { order: 1; }   /* logo right */
+    }
     .hero h1 { font-size: clamp(2rem, 2.8vw + 1rem, 3.2rem); margin: 0 0 .5rem; }
     .hero p.lead { font-size: clamp(1rem, .6vw + .9rem, 1.15rem); color: var(--ink-soft); margin: 0 0 1.25rem; }
     .hero .cta-row { display:flex; gap:.75rem; flex-wrap:wrap; }
@@ -58,10 +75,14 @@
     .btn.primary { background: linear-gradient(135deg, var(--brand-teal), var(--brand-purple)); color:#fff; }
     .btn.secondary { background:#fff; border-color: rgba(31,42,55,.08); }
 
-    .logo-badge { width: 180px; aspect-ratio: 1/1; margin: 0 auto; display:grid; place-items:center; background: conic-gradient(from 90deg at 50% 50%, rgba(124,91,167,.08), rgba(47,183,178,.08), rgba(123,191,106,.08)); border-radius: 50%; box-shadow: inset 0 0 0 10px rgba(255,255,255,.7), var(--shadow); }
+    .logo-badge { width: 180px; aspect-ratio: 1/1; margin: 0 auto; display:grid; place-items:center;
+      background: conic-gradient(from 90deg at 50% 50%, rgba(124,91,167,.08), rgba(47,183,178,.08), rgba(123,191,106,.08));
+      border-radius: 50%; box-shadow: inset 0 0 0 10px rgba(255,255,255,.7), var(--shadow);
+    }
     .logo-badge img { width: 120px; height: 120px; object-fit: contain; background: transparent; }
     .tagline { display:inline-flex; align-items:center; gap:.5rem; padding:.35rem .6rem; border-radius:999px; background: #fff; border:1px solid rgba(31,42,55,.06); box-shadow: var(--shadow); font-size:.88rem; }
 
+    /* Sections */
     section { padding: 3.25rem 0; }
     h2.section-title { font-size: 1.8rem; margin: 0 0 1.2rem; }
     .grid { display:grid; gap: 1.25rem; }
@@ -82,7 +103,7 @@
     .bio { display:flex; gap:1rem; align-items:flex-start; }
     .bio .avatar { width: 72px; height:72px; border-radius:16px; background: linear-gradient(135deg, rgba(47,183,178,.18), rgba(124,91,167,.18)); display:grid; place-items:center; font-weight:700; color:#fff; }
 
-    /* Footer update */
+    /* Footer — seamless & aligned */
     footer {
       padding: 2.5rem 0;
       background: var(--bg);
@@ -110,20 +131,14 @@
       flex-direction: column;
       line-height: 1.1;
     }
-    .footer-brand .title .name {
-      font-weight: 700;
-    }
-    .footer-brand .title .tag {
-      font-size: .82rem;
-      color: var(--ink-soft);
-    }
+    .footer-brand .title .name { font-weight: 700; }
+    .footer-brand .title .tag { font-size: .82rem; color: var(--ink-soft); }
+
     @media (max-width: 600px) {
-      .footer-grid {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+      .footer-grid { flex-direction: column; align-items: flex-start; }
     }
 
+    /* Utilities */
     .mt-0{margin-top:0} .mb-0{margin-bottom:0} .mb-2{margin-bottom:.5rem} .mb-3{margin-bottom:.75rem} .mb-4{margin-bottom:1rem}
     .center { text-align:center; }
   </style>
@@ -308,6 +323,9 @@
         <p class="mb-3">Ready to join us? Use the form below to reserve a spot or join the waitlist. You’ll receive a confirmation email with details.</p>
         <p class="small mb-3"><strong>Note:</strong> You can replace the link below with a Google Form. Create your form at <em>forms.google.com</em> and paste its share link here.</p>
         <p class="mb-3"><a class="btn primary" href="https://forms.gle/YOUR-FORM-ID" target="_blank" rel="noopener">Open Sign-Up Form</a></p>
+        <!-- Optional: embed Google Form by replacing the src below with your published Form URL
+        <iframe src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true" width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        -->
       </div>
     </div>
   </section>
@@ -324,6 +342,7 @@
             <li>Email: <a href="mailto:hello@familyyogainstitute.org">hello@familyyogainstitute.org</a></li>
             <li>Phone: <a href="tel:+1-555-555-5555">(555) 555-5555</a></li>
           </ul>
+          <p class="small mb-0">Follow along for updates and schedule announcements after the September association meeting.</p>
         </div>
         <div class="card">
           <h3 class="mt-0">Community & access</h3>
@@ -334,26 +353,34 @@
   </section>
 
   <footer>
-  <div class="container footer-grid">
-    <div class="footer-brand">
-      <img src="logo.png" alt="Family Yoga Institute logo small" />
-      <div class="title">
-        <span class="name">Family Yoga Institute</span>
-        <span class="tag">Growing together</span>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="logo.png" alt="Family Yoga Institute logo small" />
+        <div class="title">
+          <span class="name">Family Yoga Institute</span>
+          <span class="tag">Growing together</span>
+        </div>
+      </div>
+      <div class="small">
+        <strong>Quick links</strong><br/>
+        <a href="#classes">Classes</a> • <a href="#schedule">Schedule</a> • <a href="#location">Location</a> • <a href="#about">About</a> • <a href="#signup">Sign Up</a>
       </div>
     </div>
-    <div class="small">
-      <strong>Quick links</strong><br/>
-      <a href="#classes">Classes</a> • 
-      <a href="#schedule">Schedule</a> • 
-      <a href="#location">Location</a> • 
-      <a href="#about">About</a> • 
-      <a href="#signup">Sign Up</a>
+    <div class="container center small" style="margin-top:1rem;">
+      © <span id="year"></span> Family Yoga Institute. All rights reserved.
     </div>
-  </div>
-  <div class="container center small" style="margin-top:1rem;">
-    © <span id="year"></span> Family Yoga Institute. All rights reserved.
-  </div>
-</footer>
+  </footer>
+
+  <script>
+    // Mobile menu toggle (works only when mobile menu is visible in CSS)
+    function toggleMenu(){
+      const el = document.getElementById('mobileMenu');
+      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+    // Year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
 
 
