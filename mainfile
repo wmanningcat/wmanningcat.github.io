@@ -1,4 +1,3 @@
-
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -10,13 +9,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --brand-green: #7BBF6A;   /* soft green */
-      --brand-teal:  #2FB7B2;   /* fresh teal */
-      --brand-purple:#7C5BA7;   /* calm purple */
-      --ink: #1f2a37;           /* dark text */
-      --ink-soft:#4b5563;       /* secondary text */
-      --bg: #F7FAF9;            /* page background */
-      --card: #ffffff;          /* card background */
+      --brand-green: #7BBF6A;
+      --brand-teal:  #2FB7B2;
+      --brand-purple:#7C5BA7;
+      --ink: #1f2a37;
+      --ink-soft:#4b5563;
+      --bg: #F7FAF9;
+      --card: #ffffff;
       --ring: rgba(47,183,178,.25);
       --shadow: 0 10px 25px rgba(31,42,55,.08);
     }
@@ -26,7 +25,6 @@
     a { color: var(--brand-teal); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    /* Layout */
     .container { width: min(1100px, 92%); margin: 0 auto; }
     header.site-header { position: sticky; top: 0; z-index: 50; background: linear-gradient(180deg, #fff, rgba(255,255,255,.92)); backdrop-filter: saturate(180%) blur(8px); box-shadow: 0 1px 0 rgba(31,42,55,.06); }
     .nav { display:flex; align-items:center; justify-content:space-between; gap: 1rem; padding: .75rem 0; }
@@ -50,7 +48,6 @@
       .mobile-menu a.cta { margin: .5rem 1rem 1rem; text-align:center; border-radius:12px; }
     }
 
-    /* Hero */
     .hero { position: relative; padding: 5rem 0 3rem; background: radial-gradient(1200px 600px at 10% -100px, rgba(124,91,167,.15), transparent 60%), radial-gradient(900px 500px at 110% -100px, rgba(47,183,178,.12), transparent 60%); }
     .hero-inner { display:grid; grid-template-columns: 1.1fr .9fr; align-items:center; gap: 2rem; }
     @media (max-width: 900px){ .hero-inner{ grid-template-columns: 1fr; } }
@@ -65,7 +62,6 @@
     .logo-badge img { width: 120px; height: 120px; object-fit: contain; background: transparent; }
     .tagline { display:inline-flex; align-items:center; gap:.5rem; padding:.35rem .6rem; border-radius:999px; background: #fff; border:1px solid rgba(31,42,55,.06); box-shadow: var(--shadow); font-size:.88rem; }
 
-    /* Sections */
     section { padding: 3.25rem 0; }
     h2.section-title { font-size: 1.8rem; margin: 0 0 1.2rem; }
     .grid { display:grid; gap: 1.25rem; }
@@ -91,7 +87,6 @@
     @media (max-width: 900px){ .footer-grid { grid-template-columns: 1fr; } }
     .small { font-size:.9rem; color: var(--ink-soft); }
 
-    /* Utility */
     .mt-0{margin-top:0} .mb-0{margin-bottom:0} .mb-2{margin-bottom:.5rem} .mb-3{margin-bottom:.75rem} .mb-4{margin-bottom:1rem}
     .center { text-align:center; }
   </style>
@@ -133,7 +128,7 @@
       <div>
         <span class="tagline">Neighborhood classes • Prenatal & Postnatal</span>
         <h1>Mindful movement for moms & little ones</h1>
-        <p class="lead">The <strong>Family Yoga Institute (FYI)</strong> offers supportive, small‑group yoga in our neighborhood—starting with <em>Mindful Mommies To Be</em> (prenatal) and <em>Mindful Mommy & Me</em> (postnatal). If approved by the association in <strong>September</strong>, classes will be promoted and hosted on site. Let’s grow together. 💚</p>
+        <p class="lead">The <strong>Family Yoga Institute (FYI)</strong> offers supportive, small-group yoga in our neighborhood—starting with <em>Mindful Mommies To Be</em> (prenatal) and <em>Mindful Mommy & Me</em> (postnatal). If approved by the association in <strong>September</strong>, classes will be promoted and hosted on site. Let’s grow together. 💚</p>
         <div class="cta-row">
           <a class="btn primary" href="#signup">Save your spot</a>
           <a class="btn secondary" href="#classes">See class details</a>
@@ -155,7 +150,7 @@
         <article class="card">
           <span class="pill teal">Prenatal</span>
           <h3 class="mb-2">Mindful Mommies To Be</h3>
-          <p class="mb-3">Gentle, breath‑led sequences designed for each trimester. We’ll focus on comfort, mobility, pelvic floor awareness, and nervous‑system calm—plus practical mindfulness tools for pregnancy, birth, and beyond.</p>
+          <p class="mb-3">Gentle, breath-led sequences designed for each trimester. We’ll focus on comfort, mobility, pelvic floor awareness, and nervous-system calm—plus practical mindfulness tools for pregnancy, birth, and beyond.</p>
           <ul class="mb-3">
             <li>Open to all trimesters (no experience required)</li>
             <li>Props provided; bring water and a yoga mat</li>
@@ -170,7 +165,7 @@
           <p class="mb-3">A welcoming class for moms and babies (newborn to early crawlers). Rebuild strength and stability, release tension, and enjoy playful bonding practices. Feeding, changing, and fussy babies are always welcome.</p>
           <ul class="mb-3">
             <li>Safe, progressive postnatal core & pelvic floor work</li>
-            <li>Baby‑friendly pacing and transitions</li>
+            <li>Baby-friendly pacing and transitions</li>
             <li>60 minutes • Small group</li>
           </ul>
           <a class="btn secondary" href="#signup">Reserve a spot</a>
@@ -179,7 +174,7 @@
 
       <div class="card" style="margin-top:1rem;">
         <strong>What’s next at FYI?</strong>
-        <p class="mb-0 small">We’re exploring adding <em>Mike</em> to the teaching team and planning on‑site <strong>childcare</strong> so moms can practice without arranging a sitter. Stay tuned!</p>
+        <p class="mb-0 small">We’re exploring adding <em>Mike</em> to the teaching team and planning on-site <strong>childcare</strong> so moms can practice without arranging a sitter. Stay tuned!</p>
       </div>
     </div>
   </section>
@@ -225,7 +220,7 @@
       <div class="grid cols-2">
         <div class="card">
           <h3 class="mt-0">Community Association Studio</h3>
-          <p class="mb-3">Convenient neighborhood location with free on‑site parking and stroller‑friendly access. Exact room details will be provided upon registration.</p>
+          <p class="mb-3">Convenient neighborhood location with free on-site parking and stroller-friendly access. Exact room details will be provided upon registration.</p>
           <ul class="mb-3">
             <li>Clean mats and props available</li>
             <li>Nursing/changing friendly space</li>
@@ -261,7 +256,7 @@
           <div class="avatar" aria-hidden="true">FYI</div>
           <div>
             <h3 class="mt-0">About FYI</h3>
-            <p>The <strong>Family Yoga Institute</strong> supports families through evidence‑informed, community‑centered yoga. We start with prenatal and postnatal offerings and plan to grow—adding teachers like Mike and building a childcare option so moms can practice with peace of mind.</p>
+            <p>The <strong>Family Yoga Institute</strong> supports families through evidence-informed, community-centered yoga. We start with prenatal and postnatal offerings and plan to grow—adding teachers like Mike and building a childcare option so moms can practice with peace of mind.</p>
           </div>
         </div>
       </div>
@@ -275,10 +270,7 @@
       <div class="card">
         <p class="mb-3">Ready to join us? Use the form below to reserve a spot or join the waitlist. You’ll receive a confirmation email with details.</p>
         <p class="small mb-3"><strong>Note:</strong> You can replace the link below with a Google Form. Create your form at <em>forms.google.com</em> and paste its share link here.</p>
-        <p class="mb-3"><a class="btn primary" href="https://forms.gle/YOUR-FORM-ID" target="_blank" rel="noopener">Open Sign‑Up Form</a></p>
-        <!-- Optional: embed Google Form by replacing the src below with your published Form URL
-        <iframe src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true" width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-        -->
+        <p class="mb-3"><a class="btn primary" href="https://forms.gle/YOUR-FORM-ID" target="_blank" rel="noopener">Open Sign-Up Form</a></p>
       </div>
     </div>
   </section>
@@ -293,13 +285,12 @@
           <p class="mb-3">Questions about which class is right for you? Accessibility needs? Send a note—we’re happy to help.</p>
           <ul class="mb-3">
             <li>Email: <a href="mailto:hello@familyyogainstitute.org">hello@familyyogainstitute.org</a></li>
-            <li>Phone: <a href="tel:+1-555-555-5555">(555) 555‑5555</a></li>
+            <li>Phone: <a href="tel:+1-555-555-5555">(555) 555-5555</a></li>
           </ul>
-          <p class="small mb-0">Follow along for updates and schedule announcements after the September association meeting.</p>
         </div>
         <div class="card">
           <h3 class="mt-0">Community & access</h3>
-          <p class="mb-0">We’re committed to a welcoming, inclusive space. Sliding‑scale options are available; please ask. Babies cry, moms feed, and everyone is welcome.</p>
+          <p class="mb-0">We’re committed to a welcoming, inclusive space. Sliding-scale options are available; please ask. Babies cry, moms feed, and everyone is welcome.</p>
         </div>
       </div>
     </div>
@@ -325,12 +316,10 @@
   </footer>
 
   <script>
-    // Mobile menu toggle
     function toggleMenu(){
       const el = document.getElementById('mobileMenu');
       el.style.display = el.style.display === 'block' ? 'none' : 'block';
     }
-    // Year
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
