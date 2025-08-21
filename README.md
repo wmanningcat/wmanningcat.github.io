@@ -70,7 +70,23 @@ p{margin:.4rem 0 1rem}
     display: block; /* only show when toggled */
   }
 }
+.nav a {
+  font-weight: 600;
+  color: var(--muted);
+  font-size: 1.2rem;   /* was ~1rem */
+}
 
+/* Make logo bigger */
+.brand img {
+  width: 64px;   /* was 44px */
+  height: 64px;  /* was 44px */
+}
+
+/* Make "Family Yoga Institute" text bigger */
+.brand .name {
+  font-size: 1.4rem;   /* bump up from default */
+  font-weight: 700;
+}
 /* ---------- Hero (single column + bigger text) ---------- */
 .hero{
   padding:4rem 0 2.2rem;
