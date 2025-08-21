@@ -137,7 +137,7 @@
       <div>
         <span class="pill">Rancho Mission Viejo, CA</span>
         <h1 style="margin-top:.6rem">Growing together through <span style="color:var(--accent)">mindful movement</span> and community</h1>
-        <p class="sub">She’s moving forward to teach “Mommy & Me” yoga classes in her neighborhood. If approved in September, the association will promote classes and provide space. The programming director is already very positive about moving forward.</p>
+        <p class="sub">Family Yoga Institute offers a nurturing space where moms and families can move, breathe, and grow together. Our classes are designed to support every stage of motherhood — from pregnancy to postnatal bonding and beyond.</p>
         <div class="cta">
           <a class="btn" href="https://forms.gle/your-google-form-id" target="_blank" rel="noopener">Reserve your spot</a>
           <a class="btn alt" href="#classes">Explore classes</a>
@@ -146,9 +146,7 @@
       <div class="logo-card">
         <!-- Optional logo feature card -->
         <img class="logo leaf" src="assets/logo.png" alt="Family Yoga Institute logo with wreath">
-        <p style="text-align:center;margin:.6rem 0 0;color:var(--muted)"><em>“Growing together.”</em> Green, teal, and purple are our brand colors.</p>
-      </div>
-    </div>
+        <p style="text-align:center;margin:.6rem 0 0;color:var(--muted)"><em>“Growing together.”</em> 
   </header>
 
   <!-- CLASSES -->
