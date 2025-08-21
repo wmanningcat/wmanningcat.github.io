@@ -134,6 +134,7 @@ details[open]{outline:3px solid var(--ring)}
   .mobile-menu.open{display:block}
   .mobile-menu a{display:block;padding:.75rem 1rem;font-weight:700;color:var(--muted)}
 }
+
 /* --- Form styles --- */
 .form { display: grid; gap: 14px; }
 .form .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
@@ -169,7 +170,7 @@ details[open]{outline:3px solid var(--ring)}
         <li><a href="#about">About</a></li>
         <li><a href="#faq">FAQ</a></li>
         <!-- White Sign up button (nav-only) -->
-        <li><a class="btn" href="https://forms.gle/your-google-form-id" target="_blank" rel="noopener">Sign up</a></li>
+        <li><a class="btn" href="#signup">Sign up</a></li>
       </ul>
       <button class="hamburger btn ghost" aria-label="Open menu" onclick="toggleMenu()">Menu</button>
     </div>
@@ -179,7 +180,7 @@ details[open]{outline:3px solid var(--ring)}
         <a href="#schedule" onclick="toggleMenu()">Schedule & Location</a>
         <a href="#about" onclick="toggleMenu()">About</a>
         <a href="#faq" onclick="toggleMenu()">FAQ</a>
-        <a class="btn" style="margin:.6rem 0 0 .4rem" href="https://forms.gle/your-google-form-id" target="_blank" rel="noopener">Sign up</a>
+        <a class="btn" style="margin:.6rem 0 0 .4rem" href="#signup" onclick="toggleMenu()">Sign up</a>
       </div>
     </div>
   </nav>
@@ -195,7 +196,7 @@ details[open]{outline:3px solid var(--ring)}
           Our classes support every stage of motherhood — from pregnancy to postnatal bonding and beyond.
         </p>
         <div class="cta">
-          <a class="btn" href="https://forms.gle/your-google-form-id" target="_blank" rel="noopener">Reserve your spot</a>
+          <a class="btn" href="#signup">Reserve your spot</a>
           <a class="btn alt" href="#classes">Explore classes</a>
         </div>
       </div>
@@ -230,7 +231,7 @@ details[open]{outline:3px solid var(--ring)}
         </div>
         <p style="margin-top:.6rem"><strong>Who:</strong> Expecting mothers (any trimester, with medical clearance)</p>
         <div class="cta">
-          <a class="btn" href="https://forms.gle/your-google-form-id" target="_blank" rel="noopener">Sign up</a>
+          <a class="btn" href="#signup">Sign up</a>
           <a class="btn ghost" href="#faq">Read FAQs</a>
         </div>
       </article>
@@ -254,7 +255,7 @@ details[open]{outline:3px solid var(--ring)}
         </div>
         <p style="margin-top:.6rem"><strong>Who:</strong> New moms cleared for exercise; babies welcome — feed/change/soothe anytime.</p>
         <div class="cta">
-          <a class="btn" href="https://forms.gle/your-google-form-id" target="_blank" rel="noopener">Reserve spot</a>
+          <a class="btn" href="#signup">Reserve spot</a>
           <a class="btn ghost" href="#faq">Read FAQs</a>
         </div>
       </article>
@@ -275,7 +276,7 @@ details[open]{outline:3px solid var(--ring)}
             <li>Future: additional classes taught by Mike</li>
           </ul>
           <div class="cta">
-            <a class="btn" href="https://forms.gle/your-google-form-id" target="_blank" rel="noopener">Get updates &amp; enroll</a>
+            <a class="btn" href="#signup">Get updates &amp; enroll</a>
           </div>
         </article>
 
@@ -286,7 +287,7 @@ details[open]{outline:3px solid var(--ring)}
           <iframe class="map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
             src="https://www.google.com/maps?q=Rancho%20Mission%20Viejo,%20CA&output=embed"
             title="Map of Rancho Mission Viejo, California"></iframe>
-          <p class="sub" style="margin-top:.8rem">Questions? <a href="mailto:maryjaucian@gmail.com">maryjaucian@gmail.com</a> • <a href="tel:+19494688151">949-468-8151</a></p>
+          <p class="sub" style="margin-top:.8rem">Questions? <a href="mailto:mary@familyyogainstitute.com">mary@familyyogainstitute.com</a> • <a href="tel:+19494688151">949-468-8151</a></p>
         </article>
       </div>
     </div>
@@ -396,103 +397,101 @@ details[open]{outline:3px solid var(--ring)}
     </div>
   </section>
 
-<!-- CONTACT / CTA (Native form via Formspree) -->
-<section id="signup" class="container">
-  <div class="card" style="padding:28px;">
-    <div class="eyebrow">Join us</div>
-    <h2>Ready to practice? Reserve your spot.</h2>
-    <p class="sub">Fill this out and we’ll confirm your class placement and schedule. You’ll also get email updates.</p>
+  <!-- CONTACT / CTA (Native form via Formspree) -->
+  <section id="signup" class="container">
+    <div class="card" style="padding:28px;">
+      <div class="eyebrow">Join us</div>
+      <h2>Ready to practice? Reserve your spot.</h2>
+      <p class="sub">Fill this out and we’ll confirm your class placement and schedule. You’ll also get email updates.</p>
 
-    <form id="fyi-form" class="form" action="https://formspree.io/f/xzzvlwvw">
-      <!-- Honeypot anti-spam -->
-      <input type="text" name="_gotcha" class="hide" tabindex="-1" autocomplete="off">
+      <form id="fyi-form" class="form" action="https://formspree.io/f/xzzvlwvw" method="POST">
+        <!-- Honeypot anti-spam -->
+        <input type="text" name="_gotcha" class="hide" tabindex="-1" autocomplete="off">
 
-      <div class="row">
-        <div>
-          <label for="name">Full name</label>
-          <input id="name" name="Name" type="text" placeholder="Jane Doe" required>
+        <div class="row">
+          <div>
+            <label for="name">Full name</label>
+            <input id="name" name="Name" type="text" placeholder="Jane Doe" required>
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="Email" type="email" placeholder="jane@example.com" required>
+          </div>
         </div>
-        <div>
-          <label for="email">Email</label>
-          <input id="email" name="Email" type="email" placeholder="jane@example.com" required>
-        </div>
-      </div>
 
-      <div class="row">
-        <div>
-          <label for="phone">Phone (optional)</label>
-          <input id="phone" name="Phone" type="tel" placeholder="949-555-0123">
+        <div class="row">
+          <div>
+            <label for="phone">Phone (optional)</label>
+            <input id="phone" name="Phone" type="tel" placeholder="949-555-0123">
+          </div>
+          <div>
+            <label for="class">Class choice</label>
+            <select id="class" name="Class" required>
+              <option value="" disabled selected>Select a class…</option>
+              <option>Mindful Mommies To Be (Prenatal)</option>
+              <option>Mindful Mommy & Me (Postnatal)</option>
+            </select>
+          </div>
         </div>
-        <div>
-          <label for="class">Class choice</label>
-          <select id="class" name="Class" required>
-            <option value="" disabled selected>Select a class…</option>
-            <option>Mindful Mommies To Be (Prenatal)</option>
-            <option>Mindful Mommy & Me (Postnatal)</option>
-          </select>
+
+        <div class="row">
+          <div>
+            <label for="times">Preferred times</label>
+            <select id="times" name="Preferred times">
+              <option>Weekday mornings</option>
+              <option>Weekday evenings</option>
+              <option>Saturday morning</option>
+              <option>Flexible / any</option>
+            </select>
+          </div>
+          <div>
+            <label for="stage">Pregnancy/Postnatal stage</label>
+            <select id="stage" name="Stage">
+              <option>Trying to conceive</option>
+              <option>1st trimester</option>
+              <option>2nd trimester</option>
+              <option>3rd trimester</option>
+              <option>Postnatal &lt; 12 weeks</option>
+              <option>Postnatal 3–12 months</option>
+              <option>Other / prefer not to say</option>
+            </select>
+          </div>
         </div>
-      </div>
 
-      <div class="row">
-        <div>
-          <label for="times">Preferred times</label>
-          <select id="times" name="Preferred times">
-            <option>Weekday mornings</option>
-            <option>Weekday evenings</option>
-            <option>Saturday morning</option>
-            <option>Flexible / any</option>
-          </select>
+        <div class="row">
+          <div>
+            <label for="due">Due date / Baby’s age (optional)</label>
+            <input id="due" name="Due/Baby" type="text" placeholder="e.g., Due Jan 12 / 5 months old">
+          </div>
+          <div>
+            <label for="childcare">Interested in on-site childcare?</label>
+            <select id="childcare" name="Childcare interest">
+              <option>Yes</option>
+              <option>No</option>
+              <option>Maybe</option>
+            </select>
+          </div>
         </div>
+
         <div>
-          <label for="stage">Pregnancy/Postnatal stage</label>
-          <select id="stage" name="Stage">
-            <option>Trying to conceive</option>
-            <option>1st trimester</option>
-            <option>2nd trimester</option>
-            <option>3rd trimester</option>
-            <option>Postnatal &lt; 12 weeks</option>
-            <option>Postnatal 3–12 months</option>
-            <option>Other / prefer not to say</option>
-          </select>
+          <label for="notes">Questions or notes (optional)</label>
+          <textarea id="notes" name="Notes" rows="4" placeholder="Tell us anything helpful—injuries, goals, schedule constraints…"></textarea>
         </div>
-      </div>
 
-      <div class="row">
-        <div>
-          <label for="due">Due date / Baby’s age (optional)</label>
-          <input id="due" name="Due/Baby" type="text" placeholder="e.g., Due Jan 12 / 5 months old">
+        <!-- Helpful metadata -->
+        <input type="hidden" name="_subject" value="New FYI signup">
+        <input type="hidden" name="_template" value="table">
+
+        <div class="actions">
+          <button class="btn" type="submit">Submit</button>
+          <a class="btn ghost" href="#faq">Read FAQs</a>
         </div>
-        <div>
-          <label for="childcare">Interested in on-site childcare?</label>
-          <select id="childcare" name="Childcare interest">
-            <option>Yes</option>
-            <option>No</option>
-            <option>Maybe</option>
-          </select>
-        </div>
-      </div>
 
-      <div>
-        <label for="notes">Questions or notes (optional)</label>
-        <textarea id="notes" name="Notes" rows="4" placeholder="Tell us anything helpful—injuries, goals, schedule constraints…"></textarea>
-      </div>
-
-      <!-- Helpful metadata -->
-      <input type="hidden" name="_subject" value="New FYI signup">
-      <input type="hidden" name="_template" value="table">
-      <!-- Redirect after success (optional) -->
-      <!-- <input type="hidden" name="_next" value="https://familyyogainstitute.com/#thanks"> -->
-
-      <div class="actions">
-        <button class="btn" type="submit">Submit</button>
-        <a class="btn ghost" href="#faq">Read FAQs</a>
-      </div>
-
-      <div id="fyi-success" class="success">Thanks! We received your signup — we’ll be in touch soon.</div>
-      <div id="fyi-error" class="error">Hmm, something went wrong. Please try again or email mary@familyyogainstitute.it.com.</div>
-    </form>
-  </div>
-</section>
+        <div id="fyi-success" class="success">Thanks! We received your signup — we’ll be in touch soon.</div>
+        <div id="fyi-error" class="error">Hmm, something went wrong. Please try again or email mary@familyyogainstitute.com.</div>
+      </form>
+    </div>
+  </section>
 
   <!-- FOOTER -->
   <footer class="foot">
@@ -502,7 +501,7 @@ details[open]{outline:3px solid var(--ring)}
         © <span id="year"></span> Family Yoga Institute · All rights reserved
       </div>
       <div class="social">
-        <a href="mailto:mary@familyyogainstitute.it.com">Email</a> ·
+        <a href="mailto:mary@familyyogainstitute.com">Email</a> ·
         <a href="tel:+19494688151">Call/Text</a> ·
         <a href="#faq">FAQ</a>
       </div>
@@ -518,7 +517,7 @@ details[open]{outline:3px solid var(--ring)}
     // Current year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Smooth anchor scroll
+    // Smooth anchor scroll (with sticky nav offset)
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
       a.addEventListener('click', e=>{
         const id=a.getAttribute('href').slice(1);
@@ -531,9 +530,8 @@ details[open]{outline:3px solid var(--ring)}
         }
       });
     });
-  </script>
-</body>
-</html>  <script>
+
+    // AJAX Form handler (Formspree)
     (function(){
       const form = document.getElementById('fyi-form');
       if(!form) return;
@@ -553,7 +551,8 @@ details[open]{outline:3px solid var(--ring)}
             ok.style.display = 'block';
             err.style.display = 'none';
             form.reset();
-            form.querySelector('[name="_gotcha"]').value = '';
+            const honeypot = form.querySelector('[name="_gotcha"]');
+            if (honeypot) honeypot.value = '';
           }else{
             err.style.display = 'block';
             ok.style.display = 'none';
@@ -565,7 +564,6 @@ details[open]{outline:3px solid var(--ring)}
       });
     })();
   </script>
-
 </body>
 </html>
 
