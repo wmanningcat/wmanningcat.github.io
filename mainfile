@@ -134,6 +134,24 @@ details[open]{outline:3px solid var(--ring)}
   .mobile-menu.open{display:block}
   .mobile-menu a{display:block;padding:.75rem 1rem;font-weight:700;color:var(--muted)}
 }
+/* --- Form styles --- */
+.form { display: grid; gap: 14px; }
+.form .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 720px){ .form .row { grid-template-columns: 1fr; } }
+.form label { font-weight: 700; color: var(--muted); font-size: .95rem; }
+.form input, .form select, .form textarea {
+  width: 100%; padding: .9rem 1rem; border-radius: 12px; border: 1px solid rgba(0,0,0,.12);
+  background: #fff; font: inherit; color: var(--ink);
+}
+.form input:focus, .form select:focus, .form textarea:focus {
+  outline: 3px solid var(--ring);
+}
+.form small { color: var(--muted); }
+.form .actions { display:flex; gap:.6rem; flex-wrap:wrap; margin-top: 6px; }
+.form .hide { position:absolute !important; left:-9999px !important; }
+.form .success, .form .error { padding:.8rem 1rem; border-radius:10px; }
+.form .success { background:#e9f3f1; color:var(--brand); display:none; }
+.form .error { background:#fde8e8; color:#9b1c1c; display:none; }
   </style>
 </head>
 <body>
@@ -378,19 +396,103 @@ details[open]{outline:3px solid var(--ring)}
     </div>
   </section>
 
-  <!-- CONTACT / CTA -->
-  <section id="signup" class="container">
-    <div class="card" style="padding:28px;">
-      <div class="eyebrow">Join us</div>
-      <h2>Ready to practice? Reserve your spot.</h2>
-      <p class="sub">Spots are limited for a cozy, supportive atmosphere. Your registration helps us finalize days/times with the association.</p>
-      <p><strong>Questions?</strong> Email <a href="mailto:maryjaucian@gmail.com">maryjaucian@gmail.com</a> or call/text <a href="tel:+19494688151">949-468-8151</a>.</p>
-      <div class="cta">
-        <a class="btn" href="https://forms.gle/your-google-form-id" target="_blank" rel="noopener">Open signup form</a>
-        <a class="btn ghost" href="#top">Back to top</a>
+<!-- CONTACT / CTA (Native form via Formspree) -->
+<section id="signup" class="container">
+  <div class="card" style="padding:28px;">
+    <div class="eyebrow">Join us</div>
+    <h2>Ready to practice? Reserve your spot.</h2>
+    <p class="sub">Fill this out and we’ll confirm your class placement and schedule. You’ll also get email updates.</p>
+
+    <form id="fyi-form" class="form" action="https://formspree.io/f/xzzvlwvw">
+      <!-- Honeypot anti-spam -->
+      <input type="text" name="_gotcha" class="hide" tabindex="-1" autocomplete="off">
+
+      <div class="row">
+        <div>
+          <label for="name">Full name</label>
+          <input id="name" name="Name" type="text" placeholder="Jane Doe" required>
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="Email" type="email" placeholder="jane@example.com" required>
+        </div>
       </div>
-    </div>
-  </section>
+
+      <div class="row">
+        <div>
+          <label for="phone">Phone (optional)</label>
+          <input id="phone" name="Phone" type="tel" placeholder="949-555-0123">
+        </div>
+        <div>
+          <label for="class">Class choice</label>
+          <select id="class" name="Class" required>
+            <option value="" disabled selected>Select a class…</option>
+            <option>Mindful Mommies To Be (Prenatal)</option>
+            <option>Mindful Mommy & Me (Postnatal)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <label for="times">Preferred times</label>
+          <select id="times" name="Preferred times">
+            <option>Weekday mornings</option>
+            <option>Weekday evenings</option>
+            <option>Saturday morning</option>
+            <option>Flexible / any</option>
+          </select>
+        </div>
+        <div>
+          <label for="stage">Pregnancy/Postnatal stage</label>
+          <select id="stage" name="Stage">
+            <option>Trying to conceive</option>
+            <option>1st trimester</option>
+            <option>2nd trimester</option>
+            <option>3rd trimester</option>
+            <option>Postnatal &lt; 12 weeks</option>
+            <option>Postnatal 3–12 months</option>
+            <option>Other / prefer not to say</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <label for="due">Due date / Baby’s age (optional)</label>
+          <input id="due" name="Due/Baby" type="text" placeholder="e.g., Due Jan 12 / 5 months old">
+        </div>
+        <div>
+          <label for="childcare">Interested in on-site childcare?</label>
+          <select id="childcare" name="Childcare interest">
+            <option>Yes</option>
+            <option>No</option>
+            <option>Maybe</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <label for="notes">Questions or notes (optional)</label>
+        <textarea id="notes" name="Notes" rows="4" placeholder="Tell us anything helpful—injuries, goals, schedule constraints…"></textarea>
+      </div>
+
+      <!-- Helpful metadata -->
+      <input type="hidden" name="_subject" value="New FYI signup">
+      <input type="hidden" name="_template" value="table">
+      <!-- Redirect after success (optional) -->
+      <!-- <input type="hidden" name="_next" value="https://familyyogainstitute.com/#thanks"> -->
+
+      <div class="actions">
+        <button class="btn" type="submit">Submit</button>
+        <a class="btn ghost" href="#faq">Read FAQs</a>
+      </div>
+
+      <div id="fyi-success" class="success">Thanks! We received your signup — we’ll be in touch soon.</div>
+      <div id="fyi-error" class="error">Hmm, something went wrong. Please try again or email mary@familyyogainstitute.it.com.</div>
+    </form>
+  </div>
+</section>
 
   <!-- FOOTER -->
   <footer class="foot">
@@ -400,7 +502,7 @@ details[open]{outline:3px solid var(--ring)}
         © <span id="year"></span> Family Yoga Institute · All rights reserved
       </div>
       <div class="social">
-        <a href="mailto:maryjaucian@gmail.com">Email</a> ·
+        <a href="mailto:mary@familyyogainstitute.it.com">Email</a> ·
         <a href="tel:+19494688151">Call/Text</a> ·
         <a href="#faq">FAQ</a>
       </div>
@@ -430,5 +532,39 @@ details[open]{outline:3px solid var(--ring)}
       });
     });
   </script>
+</body>
+</html>  <script>
+    (function(){
+      const form = document.getElementById('fyi-form');
+      if(!form) return;
+      const ok = document.getElementById('fyi-success');
+      const err = document.getElementById('fyi-error');
+
+      form.addEventListener('submit', async (e)=>{
+        e.preventDefault();
+        const data = new FormData(form);
+        try{
+          const res = await fetch(form.action, {
+            method: 'POST',
+            headers: { 'Accept': 'application/json' },
+            body: data
+          });
+          if(res.ok){
+            ok.style.display = 'block';
+            err.style.display = 'none';
+            form.reset();
+            form.querySelector('[name="_gotcha"]').value = '';
+          }else{
+            err.style.display = 'block';
+            ok.style.display = 'none';
+          }
+        }catch(_){
+          err.style.display = 'block';
+          ok.style.display = 'none';
+        }
+      });
+    })();
+  </script>
+
 </body>
 </html>
