@@ -420,7 +420,7 @@ details[open]{outline:3px solid var(--ring)}
     <div class="card" style="padding:28px;">
       <div class="eyebrow">Join us</div>
       <h2>Ready to practice? Reserve your spot.</h2>
-      <p class="sub">Spots are limited for a cozy, supportive atmosphere. Your registration helps us finalize days/times with the association.</p>
+      <p class="sub">Spots are limited for a cozy, supportive atmospohere. Your registration helps us finalize days/times with the association.</p>
       <p><strong>Questions?</strong> Email <a href="mailto:maryjaucian@gmail.com">maryjaucian@gmail.com</a> or call/text <a href="tel:+19494688151">949-468-8151</a>.</p>
       <div class="cta">
         <a class="btn" href="https://forms.gle/your-google-form-id" target="_blank" rel="noopener">Open signup form</a>
