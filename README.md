@@ -384,7 +384,7 @@ details[open]{outline:3px solid var(--ring)}
       <div class="eyebrow">Join us</div>
       <h2>Ready to practice? Reserve your spot.</h2>
       <p class="sub">Spots are limited for a cozy, supportive atmosphere. Your registration helps us finalize days/times with the association.</p>
-      <p><strong>Questions?</strong> Email <a href="mailto:maryjaucian@gmail.com">maryjaucian@gmail.com</a> or call/text <a href="tel:+19494688151">949-468-8151</a>.</p>
+      <p><strong>Questions?</strong> Email <a href="mailto:mary@familyyogainstitute.it.com">mary@familyyogainstitute.it.com</a> or call/text <a href="tel:+19494688151">949-468-8151</a>.</p>
       <div class="cta">
         <a class="btn" href="https://forms.gle/your-google-form-id" target="_blank" rel="noopener">Open signup form</a>
         <a class="btn ghost" href="#top">Back to top</a>
