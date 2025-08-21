@@ -69,6 +69,10 @@
     .checklist{margin:.6rem 0 0;padding:0 0 0 1.2rem}
     .price{display:flex;gap:10px;align-items:center;margin:.8rem 0 0}
     .price strong{font-size:1.1rem}
+@media (min-width: 921px){
+  .hero-grid{ grid-template-columns: 1fr !important; }
+  .logo-card{ display: none !important; }
+}
     /* Bios */
     .bio{padding:28px;display:grid;grid-template-columns:1.1fr 1.2fr;gap:28px;align-items:center}
     .bio .photo{aspect-ratio:1.2/1;border-radius:16px;overflow:hidden;border:8px solid #f3f0ff}
@@ -98,6 +102,16 @@
       .mobile-menu{display:none;background:rgba(250,249,246,.97);padding:.8rem 0;border-bottom:1px solid rgba(0,0,0,.06)}
       .mobile-menu.open{display:block}
       .mobile-menu a{display:block;padding:.75rem 1rem;font-weight:700;color:var(--muted)}
+.bio .photo{
+  aspect-ratio: auto !important;
+  border: none !important;
+}
+.bio .photo img{
+  object-fit: contain !important;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+}
     }
   </style>
 </head>
@@ -344,24 +358,18 @@
   </section>
 
   <!-- CONTACT / CTA -->
-  <section id="signup" class="container">
-    <div class="card" style="padding:28px;display:grid;grid-template-columns:1.4fr 1fr;gap:24px;align-items:center">
-      <div>
-        <div class="eyebrow">Join us</div>
-        <h2>Ready to practice? Reserve your spot.</h2>
-        <p class="sub">Spots are limited for a cozy, supportive vibe. Your registration helps us finalize days/times with the association.</p>
-        <p><strong>Questions?</strong> Email <a href="mailto:maryjaucian@gmail.com">maryjaucian@gmail.com</a> or call/text <a href="tel:+19494688151">949-468-8151</a>.</p>
-        <div class="cta">
-          <a class="btn" href="https://forms.gle/your-google-form-id" target="_blank" rel="noopener">Open signup form</a>
-          <a class="btn ghost" href="#top">Back to top</a>
-        </div>
-      </div>
-      <div class="card" style="padding:18px;background:linear-gradient(145deg,#f3f9f8,#f7f3ff);border:1px dashed rgba(0,0,0,.08);text-align:center">
-        <p class="sub" style="margin:.4rem 0 .6rem"><strong>Prefer a simple contact form?</strong><br/>You can replace the signup button with a Google Form link anytime.</p>
-        <p style="font-size:.92rem;color:var(--muted)">Tip: In your Google Form, enable email collection and add fields for “Class choice,” “Preferred day/time,” and “Childcare interest.”</p>
-      </div>
+<section id="signup" class="container">
+  <div class="card" style="padding:28px;">
+    <div class="eyebrow">Join us</div>
+    <h2>Ready to practice? Reserve your spot.</h2>
+    <p class="sub">Spots are limited for a cozy, supportive vibe. Your registration helps us finalize days/times with the association.</p>
+    <p><strong>Questions?</strong> Email <a href="mailto:maryjaucian@gmail.com">maryjaucian@gmail.com</a> or call/text <a href="tel:+19494688151">949-468-8151</a>.</p>
+    <div class="cta">
+      <a class="btn" href="https://forms.gle/your-google-form-id" target="_blank" rel="noopener">Open signup form</a>
+      <a class="btn ghost" href="#top">Back to top</a>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- FOOTER -->
   <footer class="foot">
