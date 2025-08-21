@@ -70,7 +70,66 @@ p{margin:.4rem 0 1rem}
     display: block; /* only show when toggled */
   }
 }
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* ensures everything lines up vertically */
+  padding: 1rem 2rem;
+  background: var(--primary);
+  color: white;
+}
 
+nav .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+nav .logo img {
+  height: 45px; /* adjust if you want a bigger logo */
+}
+
+nav ul {
+  display: flex;
+  align-items: center; /* keeps all items vertically centered */
+  gap: 2rem; /* equal spacing between links */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem; /* slightly bigger for readability */
+  font-weight: 500;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* White Sign Up button */
+nav .btn-signup {
+  background: white;
+  color: var(--primary);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.2s ease-in-out;
+}
+
+nav .btn-signup:hover {
+  background: var(--accent);
+  color: white;
+}
 /* ---------- Hero (single column + bigger text) ---------- */
 .hero{
   padding:4rem 0 2.2rem;
