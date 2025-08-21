@@ -70,7 +70,66 @@ p{margin:.4rem 0 1rem}
     display: block; /* only show when toggled */
   }
 }
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* ensures everything lines up vertically */
+  padding: 1rem 2rem;
+  background: var(--primary);
+  color: white;
+}
 
+nav .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+nav .logo img {
+  height: 45px; /* adjust if you want a bigger logo */
+}
+
+nav ul {
+  display: flex;
+  align-items: center; /* keeps all items vertically centered */
+  gap: 2rem; /* equal spacing between links */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem; /* slightly bigger for readability */
+  font-weight: 500;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* White Sign Up button */
+nav .btn-signup {
+  background: white;
+  color: var(--primary);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.2s ease-in-out;
+}
+
+nav .btn-signup:hover {
+  background: var(--accent);
+  color: white;
+}
 /* ---------- Hero (single column + bigger text) ---------- */
 .hero{
   padding:4rem 0 2.2rem;
@@ -169,9 +228,8 @@ details[open]{outline:3px solid var(--ring)}
   .mobile-menu{display:none;background:rgba(250,249,246,.97);padding:.8rem 0;border-bottom:1px solid rgba(0,0,0,.06)}
   .mobile-menu.open{display:block}
   .mobile-menu a{display:block;padding:.75rem 1rem;font-weight:700;color:var(--muted)}
-
 }
-    /* --- FINAL OVERRIDES --- */
+/* --- FINAL OVERRIDES --- */
 
 /* 1) Hide the extra mobile menu on desktop, but allow it on mobile when toggled */
 @media (min-width: 921px){
@@ -442,7 +500,7 @@ details[open]{outline:3px solid var(--ring)}
     <div class="card" style="padding:28px;">
       <div class="eyebrow">Join us</div>
       <h2>Ready to practice? Reserve your spot.</h2>
-      <p class="sub">Spots are limited for a cozy, supportive atmospohere. Your registration helps us finalize days/times with the association.</p>
+      <p class="sub">Spots are limited for a cozy, supportive atmosphere. Your registration helps us finalize days/times with the association.</p>
       <p><strong>Questions?</strong> Email <a href="mailto:maryjaucian@gmail.com">maryjaucian@gmail.com</a> or call/text <a href="tel:+19494688151">949-468-8151</a>.</p>
       <div class="cta">
         <a class="btn" href="https://forms.gle/your-google-form-id" target="_blank" rel="noopener">Open signup form</a>
