@@ -1,4 +1,3 @@
-
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -10,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
- /* ---------- Theme ---------- */
+/* ---------- Theme ---------- */
 :root{
   --bg:#FAF9F6;
   --ink:#20302A;
@@ -41,95 +40,36 @@ h2{font-size:clamp(1.6rem,3.2vw,2.2rem)}
 h3{font-size:clamp(1.15rem,2.2vw,1.4rem)}
 p{margin:.4rem 0 1rem}
 
-/* ---------- Nav ---------- */
+/* ---------- Top Nav ---------- */
 .nav{position:sticky;top:0;z-index:50;background:rgba(250,249,246,.72);backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid rgba(62,124,109,.08)}
-.nav .inner{display:flex;align-items:center;justify-content:space-between;padding:.8rem 0}
+.nav .inner{display:flex;align-items:center;justify-content:space-between;padding:1rem 0}
 .brand{display:flex;align-items:center;gap:.75rem}
-.brand img{width:44px;height:44px;object-fit:contain;border-radius:10px}
-.brand .name{font-family:"Cormorant Garamond",serif;font-weight:700;letter-spacing:.3px}
-.nav ul{display:flex;gap:1rem;list-style:none;margin:0;padding:0;align-items:center}
-.nav a{font-weight:600;color:var(--muted)}
+.brand img{width:64px;height:64px;object-fit:contain;border-radius:10px}
+.brand .name{font-family:"Cormorant Garamond",serif;font-weight:700;letter-spacing:.3px;font-size:1.5rem;color:var(--ink)}
+.nav ul{display:flex;align-items:center;gap:1.6rem;list-style:none;margin:0;padding:0}
+.nav ul li{display:flex;align-items:center}
+.nav a{font-weight:700;color:var(--muted);font-size:1.15rem;line-height:1}
 .hamburger{display:none}
-/* Bigger nav text */
-.nav a {
-  font-weight: 600;
-  color: var(--muted);
-  font-size: 1.15rem;   /* bump up size */
+
+/* Make the Sign up button WHITE only in the top nav */
+.nav ul .btn{
+  background:#fff;
+  color:var(--brand);
+  border:2px solid var(--brand);
+  box-shadow:none;
+}
+.nav ul .btn:hover{
+  background:var(--brand);
+  color:#fff;
 }
 
-/* Hide mobile menu unless on small screens */
-.mobile-menu {
-  display: none !important;
+/* Hide duplicate mobile menu on desktop; allow toggle on mobile */
+@media (min-width: 921px){ .mobile-menu{display:none !important} }
+@media (max-width: 920px){
+  .mobile-menu{display:none}
+  .mobile-menu.open{display:block}
 }
 
-@media (max-width: 920px) {
-  .mobile-menu {
-    display: none; /* hidden by default on mobile too */
-  }
-  .mobile-menu.open {
-    display: block; /* only show when toggled */
-  }
-}
-/* Navigation */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center; /* ensures everything lines up vertically */
-  padding: 1rem 2rem;
-  background: var(--primary);
-  color: white;
-}
-
-nav .logo {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-
-nav .logo img {
-  height: 45px; /* adjust if you want a bigger logo */
-}
-
-nav ul {
-  display: flex;
-  align-items: center; /* keeps all items vertically centered */
-  gap: 2rem; /* equal spacing between links */
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-nav ul li {
-  margin: 0;
-  padding: 0;
-}
-
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-size: 1.1rem; /* slightly bigger for readability */
-  font-weight: 500;
-}
-
-nav ul li a:hover {
-  text-decoration: underline;
-}
-
-/* White Sign Up button */
-nav .btn-signup {
-  background: white;
-  color: var(--primary);
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: 0.2s ease-in-out;
-}
-
-nav .btn-signup:hover {
-  background: var(--accent);
-  color: white;
-}
 /* ---------- Hero (single column + bigger text) ---------- */
 .hero{
   padding:4rem 0 2.2rem;
@@ -140,32 +80,9 @@ nav .btn-signup:hover {
 .hero-grid{display:grid;grid-template-columns:1fr;gap:28px;align-items:center}
 .sub{color:var(--muted)}
 .hero .cta{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1rem}
-/* Larger hero text */
-.hero h1{
-  font-size: clamp(2.8rem, 6vw, 4rem);
-  line-height: 1.2;
-}
-.hero .sub{
-  font-size: 1.25rem;
-  line-height: 1.7;
-}
-.nav a {
-  font-weight: 600;
-  color: var(--muted);
-  font-size: 1.2rem;   /* was ~1rem */
-}
+.hero h1{font-size:clamp(2.8rem,6vw,4rem);line-height:1.2}
+.hero .sub{font-size:1.25rem;line-height:1.7}
 
-/* Make logo bigger */
-.brand img {
-  width: 64px;   /* was 44px */
-  height: 64px;  /* was 44px */
-}
-
-/* Make "Family Yoga Institute" text bigger */
-.brand .name {
-  font-size: 1.4rem;   /* bump up from default */
-  font-weight: 700;
-}
 /* ---------- Sections ---------- */
 section{padding:64px 0}
 .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid rgba(0,0,0,.05)}
@@ -183,23 +100,9 @@ section{padding:64px 0}
 
 /* ---------- Bios ---------- */
 .bio{padding:28px;display:grid;grid-template-columns:1.1fr 1.2fr;gap:28px;align-items:center}
-.bio .photo{
-  border-radius:16px;
-  overflow:hidden;
-  background:#f7f6fb;
-  border:6px solid #efeaf9;
-}
-/* Let the image use its natural aspect ratio so faces aren't cropped */
-.bio .photo img{
-  width:100%;
-  height:auto;
-  border-radius:12px;
-  object-fit:contain;
-}
-/* Stack instructor + FYI vertically on all screens */
-#about .grid-2{
-  grid-template-columns: 1fr !important;
-}
+.bio .photo{border-radius:16px;overflow:hidden;background:#f7f6fb;border:6px solid #efeaf9}
+.bio .photo img{width:100%;height:auto;border-radius:12px;object-fit:contain}
+#about .grid-2{grid-template-columns:1fr !important;} /* stack Instructor + FYI vertically */
 
 /* ---------- FAQ ---------- */
 .faq{max-width:980px;margin-inline:auto}
@@ -222,33 +125,14 @@ details[open]{outline:3px solid var(--ring)}
 /* ---------- Mobile ---------- */
 @media (max-width: 920px){
   .grid-2,.grid-3,.bio,.info-row{grid-template-columns:1fr}
-  .brand .name{font-size:1.05rem}
+  .brand .name{font-size:1.25rem}
   .nav ul{display:none}
   .hamburger{display:block}
-  .mobile-menu{display:none;background:rgba(250,249,246,.97);padding:.8rem 0;border-bottom:1px solid rgba(0,0,0,.06)}
+  .mobile-menu{
+    display:none;background:rgba(250,249,246,.97);padding:.8rem 0;border-bottom:1px solid rgba(0,0,0,.06)
+  }
   .mobile-menu.open{display:block}
   .mobile-menu a{display:block;padding:.75rem 1rem;font-weight:700;color:var(--muted)}
-}
-/* --- FINAL OVERRIDES --- */
-
-/* 1) Hide the extra mobile menu on desktop, but allow it on mobile when toggled */
-@media (min-width: 921px){
-  .mobile-menu { display: none !important; }
-}
-@media (max-width: 920px){
-  .mobile-menu { display: none; }          /* hidden by default */
-  .mobile-menu.open { display: block !important; } /* show when hamburger toggles it */
-}
-
-/* 2) Make nav text, logo, and brand name bigger */
-.nav .inner { padding: 1rem 0 !important; }      /* a little more vertical space */
-.nav a { font-size: 1.2rem !important; }         /* larger "Classes / About / FAQ" */
-.brand img { width: 72px !important; height: 72px !important; }  /* bigger logo */
-.brand .name { font-size: 1.6rem !important; line-height: 1.1 !important; }
-
-/* If you want the brand name also bigger on phones, bump it here too: */
-@media (max-width: 920px){
-  .brand .name { font-size: 1.35rem !important; }
 }
   </style>
 </head>
@@ -258,7 +142,6 @@ details[open]{outline:3px solid var(--ring)}
   <nav class="nav">
     <div class="container inner">
       <div class="brand">
-        <!-- Replace with your actual logo file -->
         <img src="assets/logo.png" alt="Family Yoga Institute logo" />
         <div class="name">Family Yoga Institute</div>
       </div>
@@ -267,6 +150,7 @@ details[open]{outline:3px solid var(--ring)}
         <li><a href="#schedule">Schedule & Location</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#faq">FAQ</a></li>
+        <!-- White Sign up button (nav-only) -->
         <li><a class="btn" href="https://forms.gle/your-google-form-id" target="_blank" rel="noopener">Sign up</a></li>
       </ul>
       <button class="hamburger btn ghost" aria-label="Open menu" onclick="toggleMenu()">Menu</button>
@@ -396,8 +280,7 @@ details[open]{outline:3px solid var(--ring)}
       <!-- Mary bio -->
       <article class="card bio">
         <div class="photo">
-          <!-- Replace with a great photo of Mary + kids -->
-          <img src="assets/mary-and-kids.jpg" alt="Mary Jaucian with her children">
+          <img src="assets/mary-and-kids.jpg" alt="Mary Jaucian with her children" loading="lazy">
         </div>
         <div>
           <div class="eyebrow">Meet your instructor</div>
@@ -495,7 +378,7 @@ details[open]{outline:3px solid var(--ring)}
     </div>
   </section>
 
-  <!-- CONTACT / CTA (simplified, no extra card) -->
+  <!-- CONTACT / CTA -->
   <section id="signup" class="container">
     <div class="card" style="padding:28px;">
       <div class="eyebrow">Join us</div>
@@ -540,7 +423,6 @@ details[open]{outline:3px solid var(--ring)}
         const target=document.getElementById(id);
         if(target){
           e.preventDefault();
-          // account for sticky nav height
           const offset = 72;
           const top = target.getBoundingClientRect().top + window.scrollY - offset;
           window.scrollTo({top, behavior:'smooth'});
