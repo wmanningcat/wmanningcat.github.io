@@ -50,7 +50,7 @@ p{margin:.4rem 0 1rem}
 .nav ul{display:flex;gap:1rem;list-style:none;margin:0;padding:0;align-items:center}
 .nav a{font-weight:600;color:var(--muted)}
 .hamburger{display:none}
-    /* Bigger nav text */
+/* Bigger nav text */
 .nav a {
   font-weight: 600;
   color: var(--muted);
@@ -70,23 +70,7 @@ p{margin:.4rem 0 1rem}
     display: block; /* only show when toggled */
   }
 }
-.nav a {
-  font-weight: 600;
-  color: var(--muted);
-  font-size: 1.2rem;   /* was ~1rem */
-}
 
-/* Make logo bigger */
-.brand img {
-  width: 64px;   /* was 44px */
-  height: 64px;  /* was 44px */
-}
-
-/* Make "Family Yoga Institute" text bigger */
-.brand .name {
-  font-size: 1.4rem;   /* bump up from default */
-  font-weight: 700;
-}
 /* ---------- Hero (single column + bigger text) ---------- */
 .hero{
   padding:4rem 0 2.2rem;
@@ -106,7 +90,23 @@ p{margin:.4rem 0 1rem}
   font-size: 1.25rem;
   line-height: 1.7;
 }
+.nav a {
+  font-weight: 600;
+  color: var(--muted);
+  font-size: 1.2rem;   /* was ~1rem */
+}
 
+/* Make logo bigger */
+.brand img {
+  width: 64px;   /* was 44px */
+  height: 64px;  /* was 44px */
+}
+
+/* Make "Family Yoga Institute" text bigger */
+.brand .name {
+  font-size: 1.4rem;   /* bump up from default */
+  font-weight: 700;
+}
 /* ---------- Sections ---------- */
 section{padding:64px 0}
 .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid rgba(0,0,0,.05)}
@@ -225,7 +225,7 @@ details[open]{outline:3px solid var(--ring)}
     <div style="text-align:center;margin-bottom:26px">
       <div class="eyebrow">Classes Offered</div>
       <h2>Mindful offerings for every stage of motherhood</h2>
-      <p class="sub">Launching with prenatal and postnatal series. Future plans include on-site childcare so moms can practice without arranging a babysitter — and Mike will be teaching, too.</p>
+      <p class="sub">Launching with prenatal and postnatal series. Future plans include on-site childcare so moms can practice without arranging a babysitter, and much more.</p>
     </div>
 
     <div class="grid-2">
@@ -420,7 +420,7 @@ details[open]{outline:3px solid var(--ring)}
     <div class="card" style="padding:28px;">
       <div class="eyebrow">Join us</div>
       <h2>Ready to practice? Reserve your spot.</h2>
-      <p class="sub">Spots are limited for a cozy, supportive vibe. Your registration helps us finalize days/times with the association.</p>
+      <p class="sub">Spots are limited for a cozy, supportive atmosphere. Your registration helps us finalize days/times with the association.</p>
       <p><strong>Questions?</strong> Email <a href="mailto:maryjaucian@gmail.com">maryjaucian@gmail.com</a> or call/text <a href="tel:+19494688151">949-468-8151</a>.</p>
       <div class="cta">
         <a class="btn" href="https://forms.gle/your-google-form-id" target="_blank" rel="noopener">Open signup form</a>
