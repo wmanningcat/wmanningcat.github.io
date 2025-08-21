@@ -90,7 +90,23 @@ p{margin:.4rem 0 1rem}
   font-size: 1.25rem;
   line-height: 1.7;
 }
+.nav a {
+  font-weight: 600;
+  color: var(--muted);
+  font-size: 1.2rem;   /* was ~1rem */
+}
 
+/* Make logo bigger */
+.brand img {
+  width: 64px;   /* was 44px */
+  height: 64px;  /* was 44px */
+}
+
+/* Make "Family Yoga Institute" text bigger */
+.brand .name {
+  font-size: 1.4rem;   /* bump up from default */
+  font-weight: 700;
+}
 /* ---------- Sections ---------- */
 section{padding:64px 0}
 .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid rgba(0,0,0,.05)}
