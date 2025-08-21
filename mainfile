@@ -50,6 +50,26 @@ p{margin:.4rem 0 1rem}
 .nav ul{display:flex;gap:1rem;list-style:none;margin:0;padding:0;align-items:center}
 .nav a{font-weight:600;color:var(--muted)}
 .hamburger{display:none}
+/* Bigger nav text */
+.nav a {
+  font-weight: 600;
+  color: var(--muted);
+  font-size: 1.15rem;   /* bump up size */
+}
+
+/* Hide mobile menu unless on small screens */
+.mobile-menu {
+  display: none !important;
+}
+
+@media (max-width: 920px) {
+  .mobile-menu {
+    display: none; /* hidden by default on mobile too */
+  }
+  .mobile-menu.open {
+    display: block; /* only show when toggled */
+  }
+}
 
 /* ---------- Hero (single column + bigger text) ---------- */
 .hero{
