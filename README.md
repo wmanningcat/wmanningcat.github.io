@@ -169,6 +169,28 @@ details[open]{outline:3px solid var(--ring)}
   .mobile-menu{display:none;background:rgba(250,249,246,.97);padding:.8rem 0;border-bottom:1px solid rgba(0,0,0,.06)}
   .mobile-menu.open{display:block}
   .mobile-menu a{display:block;padding:.75rem 1rem;font-weight:700;color:var(--muted)}
+
+}
+    /* --- FINAL OVERRIDES --- */
+
+/* 1) Hide the extra mobile menu on desktop, but allow it on mobile when toggled */
+@media (min-width: 921px){
+  .mobile-menu { display: none !important; }
+}
+@media (max-width: 920px){
+  .mobile-menu { display: none; }          /* hidden by default */
+  .mobile-menu.open { display: block !important; } /* show when hamburger toggles it */
+}
+
+/* 2) Make nav text, logo, and brand name bigger */
+.nav .inner { padding: 1rem 0 !important; }      /* a little more vertical space */
+.nav a { font-size: 1.2rem !important; }         /* larger "Classes / About / FAQ" */
+.brand img { width: 72px !important; height: 72px !important; }  /* bigger logo */
+.brand .name { font-size: 1.6rem !important; line-height: 1.1 !important; }
+
+/* If you want the brand name also bigger on phones, bump it here too: */
+@media (max-width: 920px){
+  .brand .name { font-size: 1.35rem !important; }
 }
   </style>
 </head>
